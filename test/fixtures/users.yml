@@ -1,0 +1,4 @@
+# test/fixtures/users.yml
+one:
+  username: testuser
+  password_digest: <%= BCrypt::Password.create('password123') %>
