@@ -1,0 +1,181 @@
+{
+  "info": {
+    "name": "collection_new_wallet",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "User Registration",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"user\": {\"username\": \"test_user\", \"password\": \"password123\", \"password_confirmation\": \"password123\"}}"
+        },
+        "url": {
+          "raw": "{{base_url}}/register",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "register"
+          ]
+        }
+      }
+    },
+    {
+      "name": "User Login",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"username\": \"test_user\", \"password\": \"password123\"}"
+        },
+        "url": {
+          "raw": "{{base_url}}/sessions",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "sessions"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Get All Users",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{jwt_token}}"
+          }
+        ],
+        "url": {
+          "raw": "{{base_url}}/users",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "users"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Create Wallet",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{jwt_token}}"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"wallet\": {\"balance\": 1000.0}}"
+        },
+        "url": {
+          "raw": "{{base_url}}/wallets",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "wallets"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Get Current User's Wallet",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{jwt_token}}"
+          }
+        ],
+        "url": {
+          "raw": "{{base_url}}/wallets/mine",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "wallets",
+            "mine"
+          ]
+        }
+      }
+    },
+    {
+      "name": "List Wallet Transactions",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{jwt_token}}"
+          }
+        ],
+        "url": {
+          "raw": "{{base_url}}/wallet_transactions/list",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "wallet_transactions",
+            "list"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Create Transaction",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{jwt_token}}"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"amount\": 500, \"transaction_type\": \"credit\"}"
+        },
+        "url": {
+          "raw": "{{base_url}}/wallet_transactions",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "wallet_transactions"
+          ]
+        }
+      }
+    }
+  ]
+}
