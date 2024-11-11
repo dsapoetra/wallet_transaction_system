@@ -31,7 +31,7 @@ group :development, :test do
 end
 
 group :development, :test do
-  gem 'rspec-rails', '~> 5.0.0'
+  gem 'rspec-rails', '~> 7.1.0'
   gem 'factory_bot_rails'
   gem 'faker'  # Generates random test data
 end 
